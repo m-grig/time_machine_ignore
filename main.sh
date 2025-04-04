@@ -10,6 +10,8 @@ DIR_NAMES=("node_modules" ".git")
 
 
 
+echo Building Command
+
 # Construct the find command dynamically
 CMD="find $(pwd) -type d -maxdepth 7"
 
@@ -26,6 +28,8 @@ CMD+=" | xargs -n 1 tmutil addexclusion"
 
 # Change directory to the development directory
 cd $DEVELOPMENT_DIRECTORY
+
+echo Finding directories to exclude
 
 # Execute the command
 eval "$CMD"
